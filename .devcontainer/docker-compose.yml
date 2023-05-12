@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  pytorch:
+    container_name: pytorch-app
+    build: .
+    volumes:
+      - ../:/app:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
