@@ -1,8 +1,9 @@
-version: '3.8'
 services:
   pytorch:
     container_name: pytorch-app
-    build: .
+    build: 
+      context: ../
+      dockerfile: ./.devcontainer/Dockerfile
     volumes:
       - ../:/workspace:cached
     command: /bin/sh -c "while sleep 1000; do :; done"

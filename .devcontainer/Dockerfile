@@ -5,7 +5,7 @@ FROM nvcr.io/nvidia/pytorch:${VARIANT}
 WORKDIR /workspace
 
 # Install python dependencies
-COPY ../requirements.txt ./
+COPY requirements.txt /workspace/requirements.txt
 RUN pip install -r requirements.txt
 
 # Uses "robbyrussell" theme (original Oh My Zsh theme), with no plugins
