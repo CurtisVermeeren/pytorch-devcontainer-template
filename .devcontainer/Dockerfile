@@ -1,6 +1,8 @@
-FROM nvcr.io/nvidia/pytorch:23.04-py3
+ARG VARIANT = "24.03-py3"
 
-WORKDIR /app
+FROM nvcr.io/nvidia/pytorch:${VARIANT}
+
+WORKDIR /workspace
 
 # Install python dependencies
 COPY ../requirements.txt ./
